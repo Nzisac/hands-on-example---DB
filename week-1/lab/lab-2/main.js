@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "" // Replace with your MySQL password
+    password: "pass123" // Replace with your MySQL password
 });
 
 // Connect to MySQL
@@ -16,7 +16,7 @@ connection.connect((err) => {
     console.log("Connected to MySQL!");
 
     // SQL Query to Create Database
-    const dbName="" // Add a unique database name
+    const dbName="musisadb" // Add a unique database name
     const createDBQuery = `CREATE DATABASE IF NOT EXISTS ${dbName}`;
 
     connection.query(createDBQuery, (err, result) => {
@@ -24,7 +24,7 @@ connection.connect((err) => {
             console.error("Error creating database:", err);
             return;
         }
-        console.log(`Database '${dbName}' created successfully!`);
+        console.log(`Database '${musisdb}' created successfully!`);
     });
 
     // Close the connection
